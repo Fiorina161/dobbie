@@ -29,9 +29,19 @@ dotnet run --project src/Dobby -- C:\path\to\your\repo
 Or publish a standalone `dobby.exe`:
 
 ```powershell
-dotnet publish src/Dobby -c Release -o C:\tools\dobby
-C:\tools\dobby\dobby.exe C:\path\to\your\repo
+dotnet publish src/Dobby -c Release -o publish
 ```
+
+A launcher batch file (e.g. `C:\my\bin\dobby.cmd`, with `C:\my\bin` on the
+PATH) makes it available everywhere:
+
+```bat
+@echo off
+"C:\dev\dobby\publish\dobby.exe" %*
+```
+
+After changing the sources, re-run the `dotnet publish` line above to
+refresh the binary the launcher points at.
 
 ## AI comments
 
