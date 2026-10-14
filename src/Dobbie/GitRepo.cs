@@ -1,9 +1,9 @@
 using System.Diagnostics;
 using System.Text;
 
-namespace Dobby;
+namespace Dobbie;
 
-/// <summary>Thin wrapper over the git CLI for dobby's commit workflow.</summary>
+/// <summary>Thin wrapper over the git CLI for dobbie's commit workflow.</summary>
 public sealed class GitRepo
 {
     public string Root { get; }
@@ -67,7 +67,7 @@ public sealed class GitRepo
     public (bool ok, string shaOrError) Commit(string message)
     {
         string msgFile = Path.Combine(
-            Path.GetTempPath(), $"dobby-commit-{Guid.NewGuid():N}.txt");
+            Path.GetTempPath(), $"dobbie-commit-{Guid.NewGuid():N}.txt");
         File.WriteAllText(msgFile, message, new UTF8Encoding(false));
         try
         {
@@ -84,7 +84,7 @@ public sealed class GitRepo
     }
 
     /// <summary>
-    /// Reverts the last commit, but only when HEAD is still the commit dobby
+    /// Reverts the last commit, but only when HEAD is still the commit dobbie
     /// made and the working tree is otherwise clean, so user work is never
     /// destroyed.
     /// </summary>
@@ -92,7 +92,7 @@ public sealed class GitRepo
     {
         if (HeadSha() != expectedSha)
             return (false,
-                "HEAD moved since dobby's last commit; not undoing.");
+                "HEAD moved since dobbie's last commit; not undoing.");
         if (!IsClean())
             return (false,
                 "Working tree has uncommitted changes; commit or stash them " +

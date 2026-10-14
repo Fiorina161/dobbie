@@ -1,6 +1,6 @@
-namespace Dobby;
+namespace Dobbie;
 
-/// <summary>Command-line options for dobby.</summary>
+/// <summary>Command-line options for dobbie.</summary>
 public sealed class Options
 {
     public const string Version = "0.1.0";
@@ -63,7 +63,7 @@ public sealed class Options
                     o.Verbose = true;
                     break;
                 case "--version":
-                    Console.WriteLine($"dobby {Version}");
+                    Console.WriteLine($"dobbie {Version}");
                     return null;
                 case "--help" or "-h" or "/?":
                     PrintUsage(Console.Out);
@@ -94,10 +94,10 @@ public sealed class Options
     public static void PrintUsage(TextWriter o)
     {
         o.WriteLine($"""
-            dobby {Version} - AI pair programmer for C#/VB.NET, powered by the
+            dobbie {Version} - AI pair programmer for C#/VB.NET, powered by the
             Claude Code CLI (uses your existing Claude subscription login).
 
-            dobby watches *.cs and *.vb files under a directory. Mark work for
+            dobbie watches *.cs and *.vb files under a directory. Mark work for
             it with one-line comments ("//" in C#, "'" in VB.NET):
 
               // make this method async AI!     change the code
@@ -105,7 +105,7 @@ public sealed class Options
               // the cache must stay lazy AI    extra context for the task
 
             Usage:
-              dobby [path] [options]
+              dobbie [path] [options]
 
             Arguments:
               path                 Directory to watch (default: current dir).

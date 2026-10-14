@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Dobby;
+namespace Dobbie;
 
 /// <summary>Builds the prompt sent to the Claude Code CLI for a run.</summary>
 public static class PromptBuilder
@@ -12,7 +12,7 @@ public static class PromptBuilder
     {
         var sb = new StringBuilder();
         sb.AppendLine(
-            "You are dobby, an AI pair programmer watching a C#/VB.NET " +
+            "You are dobbie, an AI pair programmer watching a C#/VB.NET " +
             "repository. The user marks work for you with special one-line " +
             "\"AI comments\" in source files (\"//\" comments in C#, \"'\" " +
             "comments in VB.NET):");

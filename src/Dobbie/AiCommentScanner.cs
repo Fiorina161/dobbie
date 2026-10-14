@@ -1,8 +1,8 @@
 using System.Text.RegularExpressions;
 
-namespace Dobby;
+namespace Dobbie;
 
-/// <summary>What an AI comment asks dobby to do.</summary>
+/// <summary>What an AI comment asks dobbie to do.</summary>
 public enum AiCommentKind
 {
     /// <summary>Plain "AI": extra context, does not trigger a run.</summary>

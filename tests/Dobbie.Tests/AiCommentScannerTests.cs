@@ -1,4 +1,4 @@
-namespace Dobby.Tests;
+namespace Dobbie.Tests;
 
 public class AiCommentScannerTests
 {

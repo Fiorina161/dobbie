@@ -1,5 +1,5 @@
 using System.Text;
-using Dobby;
+using Dobbie;
 
 try
 {
@@ -50,7 +50,7 @@ Console.CancelKeyPress += (_, e) =>
         e.Cancel = true;
         ui.Warn("Run cancelled. (Ctrl+C again to quit.)");
     }
-    // Otherwise let the default handler terminate dobby.
+    // Otherwise let the default handler terminate dobbie.
 };
 
 orchestrator.Start();

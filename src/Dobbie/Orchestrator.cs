@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace Dobby;
+namespace Dobbie;
 
 /// <summary>
 /// Watches the source tree, collects AI comments, fires Claude runs when a
@@ -362,7 +362,7 @@ public sealed class Orchestrator : IDisposable
 
         string message = await GenerateCommitMessageAsync(ct);
         message +=
-            "\n\nCo-authored-by: Claude (dobby) <noreply@anthropic.com>";
+            "\n\nCo-authored-by: Claude (dobbie) <noreply@anthropic.com>";
 
         var (ok, shaOrError) = _git.Commit(message);
         if (!ok)
@@ -377,7 +377,7 @@ public sealed class Orchestrator : IDisposable
 
     private async Task<string> GenerateCommitMessageAsync(CancellationToken ct)
     {
-        const string fallback = "dobby: apply changes from AI comments";
+        const string fallback = "dobbie: apply changes from AI comments";
         try
         {
             string diff = _git!.StagedDiff();
@@ -471,7 +471,7 @@ public sealed class Orchestrator : IDisposable
         }
         if (_undoStack.Count == 0)
         {
-            _ui.Warn("Nothing to undo (no dobby commits in this session).");
+            _ui.Warn("Nothing to undo (no dobbie commits in this session).");
             return;
         }
         var (ok, message) = _git.UndoLast(_undoStack.Peek());

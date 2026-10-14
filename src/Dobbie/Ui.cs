@@ -1,6 +1,6 @@
 using Spectre.Console;
 
-namespace Dobby;
+namespace Dobbie;
 
 /// <summary>
 /// All terminal output goes through this class. Spectre.Console is not
@@ -19,7 +19,7 @@ public sealed class Ui
     {
         lock (_lock)
         {
-            AnsiConsole.Write(new FigletText("dobby")
+            AnsiConsole.Write(new FigletText("dobbie")
                 .Color(Color.MediumPurple2));
             AnsiConsole.MarkupLine(
                 $"[grey]watching :[/] {Markup.Escape(o.RootPath)} " +
@@ -142,7 +142,7 @@ public sealed class Ui
         lock (_lock)
         {
             AnsiConsole.Write(new Panel(Markup.Escape(question))
-                .Header("[yellow]dobby asks[/]")
+                .Header("[yellow]dobbie asks[/]")
                 .BorderColor(Color.Yellow));
             AnsiConsole.MarkupLine(
                 "[yellow]Type your answer and press Enter:[/]");
@@ -153,12 +153,12 @@ public sealed class Ui
     {
         AnsiConsole.MarkupLine("""
             [bold]Commands:[/]
-              /undo     revert the last commit made by dobby
+              /undo     revert the last commit made by dobbie
               /pause    stop reacting to file changes
               /resume   start reacting again
               /status   show watcher state and pending AI comments
               /help     this list
-              /quit     exit dobby (also /exit or q)
+              /quit     exit dobbie (also /exit or q)
             """);
     }
 

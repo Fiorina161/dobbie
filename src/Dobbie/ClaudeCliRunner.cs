@@ -2,7 +2,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Text.Json;
 
-namespace Dobby;
+namespace Dobbie;
 
 public sealed record ClaudeRunResult(
     string? SessionId,
@@ -14,7 +14,7 @@ public sealed record ClaudeRunResult(
 
 /// <summary>
 /// Runs the Claude Code CLI in headless mode ("claude -p") and parses its
-/// stream-json output. Using the CLI means dobby reuses the user's existing
+/// stream-json output. Using the CLI means dobbie reuses the user's existing
 /// Claude subscription login; no API key is needed.
 /// </summary>
 public sealed class ClaudeCliRunner
